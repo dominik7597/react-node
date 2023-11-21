@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGODB_URI": "mongodb://127.0.0.1:27017/my-rest-api",
+    "JWT_KEY": "P8PhmV0xNg'eFjA,b{q2p/H=m?8EQ\\-n\"),oF`gRhbL34h\rd1Yp#PHIUA:Sw\\d"
+  }
+}
