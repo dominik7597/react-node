@@ -9,7 +9,7 @@ exports.users_signup = (req, res, next) => {
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
-      if (user) {
+      if (user.length > 0) {
         return next(
           res.status(422).json({
             error: "User already exists.",
@@ -17,7 +17,7 @@ exports.users_signup = (req, res, next) => {
         );
       } else {
         //10 - liczba salting rounds
-        bcrypt.hash(req.body.password, 10);
+        hash = bcrypt.hashSync(req.body.password, 10);
         const user = new User({
           _id: new mongoose.Types.ObjectId(),
           name: req.body.name,
